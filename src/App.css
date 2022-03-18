@@ -1,38 +1,64 @@
-.App {
+:root {
+  --text-main-color: #d74742;
+  --text-shadow-color: #ff9c99;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+h1 {
+  color: var(--text-main-color);
+  font-family: "Rouge Script", cursive;
+  font-size: 130px;
+  font-weight: 400;
+  line-height: 48px;
+  margin: 0 0 50px;
   text-align: center;
+  text-shadow: 1px 1px 2px var(--text-shadow-color);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: auto;
+  max-width: 1048px;
+}
+.watch {
+  background-color: #ff9c99;
+  border-radius: 24px;
+  box-shadow: 0 1px 0 rgb(17 17 26 / 10%), 0 8px 24px rgb(17 17 26 / 10%),
+    0 16px 48px rgb(17 17 26 / 10%);
+}
+.time {
+  padding: 1rem;
+}
+.time > p {
+  font-size: 5rem;
+  text-align: center;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.controller {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background-color: #ff9c99;
+  border: 1px solid white;
+  border-radius: 100vh;
+  color: white;
+  font-size: 1rem;
+  padding: 1em;
+  transition: 3s ease-in-out;
+  margin: 0 10px;
+}
+.errorMessage {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main-color);
 }
