@@ -5,7 +5,6 @@ const App = () => {
   const [second, setSecond] = useState("00");
   const [minute, setMinute] = useState("00");
   const [hour, setHour] = useState("00");
-  const [error, setError] = useState("");
   let seconds = 0;
   const timerId = useRef();
 
@@ -17,7 +16,7 @@ const App = () => {
   };
 
   const handleStart = () => {
-    if (timerId.current) throw new Error("");
+    if (timerId.current) throw new Error("error");
     timerId.current = setInterval(timer, 1000);
     console.log("start", timerId.current);
   };
@@ -28,9 +27,10 @@ const App = () => {
   const handleReset = () => {
     handleStop();
     seconds = 0;
-    setMinute("00");
-    setSecond("00");
-    setHour("00");
+    setMinute(0);
+    setSecond(0);
+    setHour(0);
+    timerId.current = null;
   };
   // console.log(`0${second}`);
   return (
@@ -44,7 +44,6 @@ const App = () => {
               {`0${second}`.slice(-2)}
             </p>
           </div>
-          <div className="errorMessage">{error}</div>
           <div className="controller">
             <button className="start" onClick={handleStart}>
               START
